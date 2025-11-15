@@ -1,0 +1,39 @@
+<div class="form-group">
+    <label for="name" class="form-label">Name:</label>
+    <input type="text" id="name" name="name" class="form-input" placeholder="Enter your name" value="World">
+</div>
+
+<div class="form-group">
+    <label for="foregroundColor" class="form-label">Foreground Color:</label>
+    <input type="color" id="foregroundColor" name="foregroundColor" class="color-picker" value="#000000">
+</div>
+
+<div class="form-group">
+    <label for="backgroundColor" class="form-label">Background Color:</label>
+    <input type="color" id="backgroundColor" name="backgroundColor" class="color-picker" value="#ffffff">
+</div>
+
+<div class="form-group">
+    <label for="fontSize" class="form-label">Font Size:</label>
+    <input type="number" id="fontSize" name="fontSize" class="form-input" min="10" max="200" step="5" value="50">
+</div>
+
+<script>
+    // Populate form values from plugin settings
+    document.addEventListener('DOMContentLoaded', () => {
+        if (pluginSettings) {
+            if (pluginSettings.name) {
+                document.getElementById('name').value = pluginSettings.name;
+            }
+            if (pluginSettings.foregroundColor) {
+                document.getElementById('foregroundColor').value = pluginSettings.foregroundColor;
+            }
+            if (pluginSettings.backgroundColor) {
+                document.getElementById('backgroundColor').value = pluginSettings.backgroundColor;
+            }
+            if (pluginSettings.fontSize) {
+                document.getElementById('fontSize').value = pluginSettings.fontSize;
+            }
+        }
+    });
+</script>
